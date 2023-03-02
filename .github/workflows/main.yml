@@ -7,8 +7,8 @@ on:
     branches: [master]
 
 env:
-  WEBAPP_PATH: ./source/Core.API
-  AZURE_WEBAPP_NAME: app-asc-dev-core
+  WEBAPP_PATH: ./source/JNI.API
+  AZURE_WEBAPP_NAME: app-jni-dev-core
   AZURE_WEBAPP_PACKAGE_PATH: "."
 
 jobs:
