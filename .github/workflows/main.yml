@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 env:
-  WEBAPP_PATH: ./source/JNI.API
+  WEBAPP_PATH: ./source/Nile.API
   AZURE_WEBAPP_NAME: app-jni-dev-core
   AZURE_WEBAPP_PACKAGE_PATH: "."
 

@@ -1,4 +1,4 @@
-namespace JNI.Nile
+namespace Nile.API
 {
     public class WeatherForecast
     {
