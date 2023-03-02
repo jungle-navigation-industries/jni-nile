@@ -1,0 +1,45 @@
+name: main
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+env:
+  WEBAPP_PATH: ./source/Core.API
+  AZURE_WEBAPP_NAME: app-asc-dev-core
+  AZURE_WEBAPP_PACKAGE_PATH: "."
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Format
+        run: dotnet format
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:Threshold=100 /p:ThresholdType=branch
+
+      - name: Publish
+        run: dotnet publish '${{ env.WEBAPP_PATH }}' -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/app'
+
+      # - name: Deploy To Azure
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: ${{ env.AZURE_WEBAPP_NAME }}
+      #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      #     package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/app
