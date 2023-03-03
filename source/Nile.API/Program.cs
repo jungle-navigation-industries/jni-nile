@@ -1,3 +1,6 @@
+using Nile.Infrastructure.Characters;
+using Nile.Infrastructure.Common.Module;
+
 namespace Nile.API
 {
     public class Program
@@ -9,6 +12,8 @@ namespace Nile.API
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCommonDependencies(builder.Configuration);
+            builder.Services.RegisterCharacter();
 
             var app = builder.Build();
 

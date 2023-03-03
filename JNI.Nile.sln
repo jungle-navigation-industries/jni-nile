@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nile.API", "source\Nile.API\Nile.API.csproj", "{CC3C93C3-E4F1-474E-B8CB-5770A60C589C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nile.Infrastructure", "source\Nile.Infrastructure\Nile.Infrastructure.csproj", "{059297CF-F148-43FA-8B66-450516DFAB1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nile.Application", "source\Nile.Application\Nile.Application.csproj", "{E8AC47CF-5ED1-44B5-9E0B-CAB2A7EDF95E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,14 @@ Global
 		{CC3C93C3-E4F1-474E-B8CB-5770A60C589C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC3C93C3-E4F1-474E-B8CB-5770A60C589C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC3C93C3-E4F1-474E-B8CB-5770A60C589C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{059297CF-F148-43FA-8B66-450516DFAB1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{059297CF-F148-43FA-8B66-450516DFAB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{059297CF-F148-43FA-8B66-450516DFAB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{059297CF-F148-43FA-8B66-450516DFAB1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8AC47CF-5ED1-44B5-9E0B-CAB2A7EDF95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8AC47CF-5ED1-44B5-9E0B-CAB2A7EDF95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8AC47CF-5ED1-44B5-9E0B-CAB2A7EDF95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8AC47CF-5ED1-44B5-9E0B-CAB2A7EDF95E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
