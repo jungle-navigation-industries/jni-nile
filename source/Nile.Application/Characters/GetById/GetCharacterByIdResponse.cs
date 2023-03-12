@@ -1,8 +1,9 @@
 ﻿using ESI.NET.Models.Character;
+using Nile.Application.Common.Responses;
 
 namespace Nile.Application.Characters.GetById
 {
-    public class GetCharacterByIdResponse
+    public class GetCharacterByIdResponse : BaseResponse
     {
         public GetCharacterByIdResponse(Information information)
         {
