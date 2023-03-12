@@ -2,6 +2,7 @@
 using ESI.NET;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace Nile.Infrastructure.Common.Module
 {
@@ -11,7 +12,13 @@ namespace Nile.Infrastructure.Common.Module
         {
             services.AddEsi(configuration.GetSection("EsiConfig"));
 
-            services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.Load("Nile.Application")));
+            services.AddMediatR(config => config.RegisterServicesFromAssemblies(Assembly.Load("Nile.Application"), Assembly.Load("Nile.Infrastructure")));
+
+            var loggerConfiguration = new LoggerConfiguration()
+                                        .WriteTo.Console()
+                                        .CreateLogger();
+
+            services.AddSingleton<ILogger>(_ => loggerConfiguration);
         }
     }
 }
